@@ -3,6 +3,7 @@ package com.nusiss.commonservice.feign;
 import com.nusiss.commonservice.config.ApiResponse;
 import com.nusiss.commonservice.entity.CartItem;
 import org.springframework.cloud.openfeign.FeignClient;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -21,4 +22,7 @@ public interface ShoppingCartFeignClient {
      */
     @GetMapping("/cart/items")
     ApiResponse<List<CartItem>> getCartItems(@RequestParam("userId") Long userId);
+
+    @DeleteMapping("/cart/clear")
+    ApiResponse<String> clearCart(@RequestParam("userId") Long userId);
 }
