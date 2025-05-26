@@ -1,6 +1,7 @@
 package com.nusiss.commonservice.feign;
 
 import com.nusiss.commonservice.config.ApiResponse;
+import com.nusiss.commonservice.entity.InventoryChangeRequest;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
