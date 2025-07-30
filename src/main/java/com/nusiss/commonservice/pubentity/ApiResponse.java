@@ -1,4 +1,4 @@
-package com.nusiss.commonservice.config;
+package com.nusiss.commonservice.pubentity;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

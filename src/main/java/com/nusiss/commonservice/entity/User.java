@@ -2,12 +2,13 @@ package com.nusiss.commonservice.entity;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDateTime;
 
 @Setter
 @Getter
-public class User {
+public class User{
 
     private Integer userId;
 
@@ -17,30 +18,27 @@ public class User {
 
     private String password;
 
-    private Role role;
+    private String createDatetime;
 
-    private LocalDateTime createDatetime;
-
-    private LocalDateTime updateDatetime;
+    private String updateDatetime;
 
     private String createUser;
 
     private String updateUser;
 
-    protected void onCreate() {
-        this.createDatetime = LocalDateTime.now();
-        this.updateDatetime = LocalDateTime.now();
+    public User(){}
+
+    public User(Integer userId, String username, String email,
+                String createDatetime, String updateDatetime,
+                String createUser, String updateUser) {
+        this.userId = userId;
+        this.username = username;
+        this.email = email;
+        this.createDatetime = createDatetime;
+        this.updateDatetime = updateDatetime;
+        this.createUser = createUser;
+        this.updateUser = updateUser;
     }
 
-    protected void onUpdate() {
-        this.updateDatetime = LocalDateTime.now();
-    }
-
-    // Getters and Setters
-
-    public enum Role {
-        CUSTOMER, SELLER, ADMIN
-    }
-
-    // Add constructors, getters, and setters...
 }
+
