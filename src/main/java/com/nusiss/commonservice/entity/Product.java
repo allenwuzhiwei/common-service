@@ -9,4 +9,5 @@ public class Product {
     private Long id;
     private String name;
     private BigDecimal price;
+    private Long sellerId;  // 卖家 ID
 }
